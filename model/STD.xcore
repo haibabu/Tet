@@ -1,0 +1,8 @@
+@Ecore(nsURI="http://www.student.org")
+@GenModel(modelDirectory="/com.babu.emf/src", modelName="Student", importerID="org.eclipse.emf.importer.ecore")
+package STD
+
+class Student {
+	String Name
+	int RollNo
+}
