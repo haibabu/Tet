@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link STD.impl.StudentImpl#getName <em>Name</em>}</li>
  *   <li>{@link STD.impl.StudentImpl#getRollNo <em>Roll No</em>}</li>
+ *   <li>{@link STD.impl.StudentImpl#getStandard <em>Standard</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +67,26 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 	 * @ordered
 	 */
 	protected int rollNo = ROLL_NO_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getStandard() <em>Standard</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStandard()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String STANDARD_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getStandard() <em>Standard</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStandard()
+	 * @generated
+	 * @ordered
+	 */
+	protected String standard = STANDARD_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +154,27 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getStandard() {
+		return standard;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStandard(String newStandard) {
+		String oldStandard = standard;
+		standard = newStandard;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, STDPackage.STUDENT__STANDARD, oldStandard, standard));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +182,8 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 				return getName();
 			case STDPackage.STUDENT__ROLL_NO:
 				return getRollNo();
+			case STDPackage.STUDENT__STANDARD:
+				return getStandard();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,6 +201,9 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 				return;
 			case STDPackage.STUDENT__ROLL_NO:
 				setRollNo((Integer)newValue);
+				return;
+			case STDPackage.STUDENT__STANDARD:
+				setStandard((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +223,9 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 			case STDPackage.STUDENT__ROLL_NO:
 				setRollNo(ROLL_NO_EDEFAULT);
 				return;
+			case STDPackage.STUDENT__STANDARD:
+				setStandard(STANDARD_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +242,8 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case STDPackage.STUDENT__ROLL_NO:
 				return rollNo != ROLL_NO_EDEFAULT;
+			case STDPackage.STUDENT__STANDARD:
+				return STANDARD_EDEFAULT == null ? standard != null : !STANDARD_EDEFAULT.equals(standard);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -210,6 +262,8 @@ public class StudentImpl extends MinimalEObjectImpl.Container implements Student
 		result.append(name);
 		result.append(", RollNo: ");
 		result.append(rollNo);
+		result.append(", Standard: ");
+		result.append(standard);
 		result.append(')');
 		return result.toString();
 	}
