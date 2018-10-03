@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EPackage;
  * <!-- end-user-doc -->
  * @see STD.STDFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/GenModel modelDirectory='/com.babu.emf/src' modelName='Student' importerID='org.eclipse.emf.importer.ecore'"
  * @generated
  */
 public interface STDPackage extends EPackage {
@@ -85,13 +84,22 @@ public interface STDPackage extends EPackage {
 	int STUDENT__ROLL_NO = 1;
 
 	/**
+	 * The feature id for the '<em><b>Standard</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STUDENT__STANDARD = 2;
+
+	/**
 	 * The number of structural features of the '<em>Student</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT_FEATURE_COUNT = 2;
+	int STUDENT_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Student</em>' class.
@@ -134,6 +142,17 @@ public interface STDPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getStudent_RollNo();
+
+	/**
+	 * Returns the meta object for the attribute '{@link STD.Student#getStandard <em>Standard</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Standard</em>'.
+	 * @see STD.Student#getStandard()
+	 * @see #getStudent()
+	 * @generated
+	 */
+	EAttribute getStudent_Standard();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -183,6 +202,14 @@ public interface STDPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STUDENT__ROLL_NO = eINSTANCE.getStudent_RollNo();
+
+		/**
+		 * The meta object literal for the '<em><b>Standard</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STUDENT__STANDARD = eINSTANCE.getStudent_Standard();
 
 	}
 

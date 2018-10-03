@@ -9,8 +9,6 @@ import STD.Student;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
-
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -73,9 +71,6 @@ public class STDPackageImpl extends EPackageImpl implements STDPackage {
 
 		isInited = true;
 
-		// Initialize simple dependencies
-		EcorePackage.eINSTANCE.eClass();
-
 		// Create package meta-data objects
 		theSTDPackage.createPackageContents();
 
@@ -123,6 +118,15 @@ public class STDPackageImpl extends EPackageImpl implements STDPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getStudent_Standard() {
+		return (EAttribute)studentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public STDFactory getSTDFactory() {
 		return (STDFactory)getEFactoryInstance();
 	}
@@ -149,6 +153,7 @@ public class STDPackageImpl extends EPackageImpl implements STDPackage {
 		studentEClass = createEClass(STUDENT);
 		createEAttribute(studentEClass, STUDENT__NAME);
 		createEAttribute(studentEClass, STUDENT__ROLL_NO);
+		createEAttribute(studentEClass, STUDENT__STANDARD);
 	}
 
 	/**
@@ -174,9 +179,6 @@ public class STDPackageImpl extends EPackageImpl implements STDPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
-		// Obtain other dependent packages
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -185,8 +187,9 @@ public class STDPackageImpl extends EPackageImpl implements STDPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(studentEClass, Student.class, "Student", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStudent_Name(), theEcorePackage.getEString(), "Name", null, 0, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getStudent_RollNo(), theEcorePackage.getEInt(), "RollNo", null, 0, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStudent_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStudent_RollNo(), ecorePackage.getEInt(), "RollNo", null, 0, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStudent_Standard(), ecorePackage.getEString(), "Standard", null, 0, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
